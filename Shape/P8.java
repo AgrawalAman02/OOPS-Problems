@@ -57,24 +57,26 @@ class Square{
 public class P8 {
  
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter the radius of circle : ");
-        int radius = Integer.parseInt(br.readLine());
-        Circle c = new Circle(radius);
-        System.out.println("Area : " + c.getArea());
-        System.out.println("Perimeter : " + c.getPerimeter());
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){  // used try with resource
+            System.out.println("Enter the radius of circle : ");
+            int radius = Integer.parseInt(br.readLine());
+            Circle c = new Circle(radius);
+            System.out.println("Area : " + c.getArea());
+            System.out.println("Perimeter : " + c.getPerimeter());
 
-        System.out.println("Enter the length & breadth of rectangle : ");
-        int len = Integer.parseInt(br.readLine());
-        int wid = Integer.parseInt(br.readLine());
-        Rectangle r = new Rectangle(len, wid);
-        r.getPerimeter();
-        r.getArea();
+            System.out.println("Enter the length & breadth of rectangle : ");
+            int len = Integer.parseInt(br.readLine());
+            int wid = Integer.parseInt(br.readLine());
+            Rectangle r = new Rectangle(len, wid);
+            r.getPerimeter();
+            r.getArea();
 
-        System.out.println("enter the edge of the square : ");
-        int a = Integer.parseInt(br.readLine());
-        Square s = new Square(a);
-        s.getArea();
-        s.getPerimeter();
+            System.out.println("enter the edge of the square : ");
+            int a = Integer.parseInt(br.readLine());
+            Square s = new Square(a);
+            s.getArea();
+            s.getPerimeter();
+        }
+        
     }
 }
