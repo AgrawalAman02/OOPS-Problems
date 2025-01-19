@@ -1,5 +1,5 @@
 /*
- * Q.3. Write a program using an interface called Volume. 
+ * Q. Write a program using an interface called Volume. 
  * Assume that there is a part in a machine having three dimension s1, s2, s3 and 
  * Involume=1/3*pi*s1*s2*s3 Outvolume=4/3* pi*s1*s2*s3
  * 
