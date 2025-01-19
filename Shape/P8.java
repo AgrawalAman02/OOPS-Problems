@@ -6,6 +6,10 @@
 
 package Shape;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 class Circle{
     private int r;
     public Circle(int r){
@@ -29,10 +33,10 @@ class Rectangle{
     }
 
     public void getArea(){
-        System.out.println(this.len*this.wid);
+        System.out.println("Area : " + this.len*this.wid);
     }
     public void getPerimeter(){
-        System.out.println(2*(len+wid));
+        System.out.println("Perimeter : " + 2*(len+wid));
     }
 }
 
@@ -42,26 +46,34 @@ class Square{
         this.a= a;
     }
     public void getPerimeter(){
-        System.out.println(4*a);
+        System.out.println("Perimeter : " + 4*a);
     }
     public void getArea(){
-        System.out.println(a*a);
+        System.out.println("Area : " + a*a);
     }
 }
 
 
 public class P8 {
  
-    public static void main(String[] args) {
-        Circle c = new Circle(5);
-        System.out.println(c.getArea());
-        System.out.println(c.getPerimeter());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the radius of circle : ");
+        int radius = Integer.parseInt(br.readLine());
+        Circle c = new Circle(radius);
+        System.out.println("Area : " + c.getArea());
+        System.out.println("Perimeter : " + c.getPerimeter());
 
-        Rectangle r = new Rectangle(4, 5);
+        System.out.println("Enter the length & breadth of rectangle : ");
+        int len = Integer.parseInt(br.readLine());
+        int wid = Integer.parseInt(br.readLine());
+        Rectangle r = new Rectangle(len, wid);
         r.getPerimeter();
         r.getArea();
 
-        Square s = new Square(4);
+        System.out.println("enter the edge of the square : ");
+        int a = Integer.parseInt(br.readLine());
+        Square s = new Square(a);
         s.getArea();
         s.getPerimeter();
     }
